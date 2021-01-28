@@ -1,0 +1,24 @@
+<div class="ui search search-box" [class.loading]="isLoading">
+  <div class="ui icon input inputWrapper">
+    <input
+      type="text"
+      class="prompt"
+      (keyup) = "getSearchText($event.target.value)"
+    />
+    <button class = "layout" (click) = "getFilterSearch()">
+      <i  class="search icon"></i>
+    </button>
+    
+  </div>
+ 
+
+<div class = "searchDropdown">
+  Filters By &nbsp;&nbsp;
+  <select class = "selectStyle" (change)="onEditClick($event.target.value)">
+    
+    <option *ngFor="let title of titleArray" [value]="title">
+      {{title}}
+    </option>
+</select>
+
+</div>
